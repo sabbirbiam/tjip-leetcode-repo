@@ -24,6 +24,7 @@ class Solution {
             if(currentNode.childNode[position] ==  null) {
                 currentNode.childNode[position] = new TrieNode();
             }
+            currentNode = currentNode.childNode[position];
         }
         currentNode.word = word;
     }
@@ -37,13 +38,12 @@ class Solution {
          
          // System.out.println(current.word);
         
-        if( words.size() < 3) {
-            System.out.println(current.word);
+        if(current.word.length() > 0 && words.size() < 3) {
             words.add(current.word);
         }
         
         for(int i  = 0 ; i < 26; ++i) {
-            System.out.println("catch");
+            // System.out.println("catch");
             words = dfs(current.childNode[i], words);
         }
         
