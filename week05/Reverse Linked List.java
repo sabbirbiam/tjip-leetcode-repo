@@ -1,3 +1,11 @@
+/**
+*
+* Time Complexity: O(N)
+* Where N is the length of ListNode
+* Space Complixity: O(1)
+*
+*
+**/
 class Solution {
     public ListNode reverseList(ListNode head) {
         

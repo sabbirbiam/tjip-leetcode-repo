@@ -1,4 +1,12 @@
 /**
+*
+* Time Complexity: O(N)
+* Where N is the maximum length of two ListNode
+* Space Complixity: O(1)
+*
+**/
+
+/**
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
@@ -11,18 +19,12 @@ class Solution {
         ListNode result = null;
           int carry = 0;
          ListNode  prev = null;
-            ListNode temp = null;
+         ListNode temp = null;
             int sum = 0;
+			
         while(l1 != null || l2 != null) {
-           
-            
-            // sum = carry +(l1 != null ? l1.val : 0) 
-            //         + (l2 != null ? l2.val : 0);
             int x = (l1 != null) ? l1.val : 0;
             int y = (l2 != null) ? l2.val : 0;
-            
-            System.out.print(x);            System.out.print(y);
-
             
             sum = carry + x + y;
             
