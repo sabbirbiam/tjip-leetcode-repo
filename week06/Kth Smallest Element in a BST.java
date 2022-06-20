@@ -1,4 +1,12 @@
 /**
+*
+* Time Complexity: O(N) 
+* Where N is the length of ListNode
+* Space Complixity: O(N) 
+* N space of the recursion
+*
+**/
+/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -22,12 +30,7 @@ class Solution {
     void  runInorder(TreeNode root, int k) {
         if(root == null) return;
         
-        // System.out.println(k);
-        // System.out.println(root.val);
-        
-        runInorder(root.left, k);
-        // System.out.println(root.val);
-        //System.out.println(root.val);
+        runInorder(root.left, k); 
         count--;
         if(count == 0) {
             System.out.println("Sabbir");
@@ -41,8 +44,6 @@ class Solution {
     public int kthSmallest(TreeNode root, int k) {
         count = k;
         runInorder(root, k);
-        
-        // return this.value;
         return value;
     }
 }

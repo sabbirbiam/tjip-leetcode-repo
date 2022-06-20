@@ -1,4 +1,12 @@
 /**
+*
+* Time Complexity: O(N) 
+* Where N is the length of ListNode
+* Space Complixity: O(NM) 
+* M and N space of the two recursion value
+*
+**/
+/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;

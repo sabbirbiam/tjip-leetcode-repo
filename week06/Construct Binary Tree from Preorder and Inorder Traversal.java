@@ -1,4 +1,12 @@
 /**
+*
+* Time Complexity: O(N^2) 
+* Where N is the length of ListNode
+* Space Complixity: O(NM) 
+* M and N space of the two
+*
+**/
+/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -17,9 +25,6 @@ class Solution {
     public static int pos = 0;
     
     public TreeNode generateTree(int[] preorder, int[] inorder, int L, int R, int pos, HashMap<Integer, Integer> preorderListMap) {
-        // System.out.println(L);        
-        System.out.println(R);
-
         if(pos > preorder.length || L > R) return null;
         
         TreeNode newNode = new TreeNode(preorder[pos++]);
@@ -38,6 +43,5 @@ class Solution {
         }
         
         return generateTree(preorder, inorder, 0, preorder.length-1, pos, preorderListMap);
-        //return null;
     }
 }
