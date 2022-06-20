@@ -1,3 +1,4 @@
+TIME COMPLEXICITY
 class TrieNode {
     String word;
     TrieNode[] childNode;

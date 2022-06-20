@@ -1,3 +1,4 @@
+TIME COMPLEXICITY
 class TrieNode {
     boolean isWord;
     TrieNode[] childNode;
