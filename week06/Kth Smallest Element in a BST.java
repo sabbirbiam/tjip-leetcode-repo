@@ -2,8 +2,8 @@
 *
 * Time Complexity: O(N) 
 * Where N is the length of ListNode
-* Space Complixity: O(N) 
-* N space of the recursion
+* Space Complixity: O(NM) 
+* M and N space of the two recursion value
 *
 **/
 /**
@@ -22,20 +22,25 @@
  * }
  */
 class Solution {
-    
+
      private static int value = 0;
      private static int count = 0;
-      
-  
+
+
     void  runInorder(TreeNode root, int k) {
         if(root == null) return;
-        
-        runInorder(root.left, k); 
+
+        // System.out.println(k);
+        // System.out.println(root.val);
+
+        runInorder(root.left, k);
+        // System.out.println(root.val);
+        //System.out.println(root.val);
         count--;
         if(count == 0) {
             System.out.println("Sabbir");
             System.out.println(root.val);
-            
+
             value = root.val;
             return;
         }
@@ -44,6 +49,8 @@ class Solution {
     public int kthSmallest(TreeNode root, int k) {
         count = k;
         runInorder(root, k);
+
+        // return this.value;
         return value;
     }
 }
