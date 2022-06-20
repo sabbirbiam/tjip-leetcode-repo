@@ -1,3 +1,11 @@
+/**
+*
+* Time Complexity: O(N)
+* Where N is the maximum length of two ListNode
+* Space Complixity: O(M)
+* where M is total number of Node
+*
+**/
 public class Node {
      int value;
      Node next;
@@ -55,7 +63,7 @@ class MyLinkedList {
 
     public void addAtIndex(int index, int val) {
         Node currentNode = root;
-//        currentNode =  currentNode.next;
+
         if(index > this.count)  return;
             while(index-- > 0) {
             System.out.println(index);
@@ -65,15 +73,9 @@ class MyLinkedList {
                 this.count += 1;
                 return;
             }
-            System.out.println(index);
-
-
+			
             currentNode = currentNode.next;
         }
-
-
-        System.out.println("hi");
-        System.out.println(index);
 
         Node tempNode = currentNode.next;
         currentNode.next = new Node(val, null);
