@@ -1,4 +1,8 @@
-TIME COMPLEXICITY
+/**
+Time Complexity: O(N)
+// Where N is the total number of Node
+Space Complixity: O(M) // Where M is the total number of node
+**/
 class TrieNode {
     boolean isWord;
     TrieNode[] childNode;
@@ -41,7 +45,7 @@ class Solution {
             currentNode = currentNode.childNode[order];
         } 
          return (currentNode != null) && (currentNode.isWord | isPrefixSearch);
-        // return (currentNode.childNode == null | isPrefixSearch) ? false : true;
+   
     }
     
     public boolean wordBreak(String s, List<String> wordDict) {
@@ -50,16 +54,13 @@ class Solution {
         }
         
         boolean [] dp = new boolean [s.length() + 1];
-        
-        // for(int i = 0; i < dp.length; ++i) {
-        //     System.out.println(dp[i]);
-        // }
+     
         
         char[] charArray = s.toCharArray();
         dp[0] = true;
         
         for(int i = 0; i < charArray.length; ++i) {
-            // System.out.println(charArray[i]);
+             
             if(!dp[i]) continue;
             
             int j = i;
@@ -69,22 +70,12 @@ class Solution {
             while(j < charArray.length && currentNode.childNode[charArray[j] - 'a'] !=  null) {
                 currentNode =  currentNode.childNode[charArray[j++] - 'a'];
                if(currentNode.isWord == true) {
-                   // System.out.println("Saved");
                    dp[j] = true;
                }
             }
             
         }
-        
-        //   for(int i = 0; i < dp.length; ++i) {
-        //     System.out.println(dp[i]);
-        // }
-        // System.out.println(dp[s.length()]);
         return dp[s.length()];
     }
     
 }
-
-
-
-
