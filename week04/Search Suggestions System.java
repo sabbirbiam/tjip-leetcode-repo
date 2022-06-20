@@ -1,4 +1,9 @@
-TIME COMPLEXICITY
+/**
+Time Complexity: O(N) + O(V) 
+// Where N is the total number of Node & V is number of Vertices of DFS
+Space Complixity: O(M) // Where M is the total number of node
+**/
+
 class TrieNode {
     String word;
     TrieNode[] childNode;
@@ -36,15 +41,12 @@ class Solution {
          if(current != null) System.out.println(current.word);
         
         if(current == null || words.size() == 3) return words;
-         
-         // System.out.println(current.word);
         
         if(current.word.length() > 0 && words.size() < 3) {
             words.add(current.word);
         }
         
         for(int i  = 0 ; i < 26; ++i) {
-            // System.out.println("catch");
             words = dfs(current.childNode[i], words);
         }
         

@@ -1,4 +1,8 @@
-TIME COMPLEXICITY
+/**
+Time Complexity: O(N) // Where N is the total number of Node
+Space Complixity: O(M) // Where M is the total number of node
+**/
+
 class TrieNode {
     public boolean isWord;
     public TrieNode[] childNode;
@@ -45,7 +49,6 @@ public class Trie {
             currentNode = currentNode.childNode[order];
         } 
          return (currentNode != null) && (currentNode.isWord | isPrefixSearch);
-        // return (currentNode.childNode == null | isPrefixSearch) ? false : true;
     }
 
     public boolean startsWith(String prefix) {
